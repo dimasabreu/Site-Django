@@ -10,18 +10,7 @@
 
 <div class="home-container">
     <div>
-        <h3>Procurar Tópicos</h3>
-        <hr>
-
-        <div>
-            <a href="{% url 'home' %}">Todos</a>
-        </div>
-
-        {% for topic in topics %}
-            <div>
-                <a href="{% url 'home' %}?q={{topic.name}}">{{topic.name}}</a>
-            </div>
-        {% endfor %}
+        {% include 'base/topic_component.html' %}
     </div>
 
     <div>
@@ -31,33 +20,15 @@
             <h5>{{room_count}} sala disponível</h5>
         {% endif %}
         <a href="{% url 'create-room' %}">Criar Sala</a>
-        <div>
-            {% for room in rooms %}
-            <div>
-                {% if request.user == room.host %}
-                    <a href="{% url 'update-room' room.id %}">Editar</a>
-                    <a href="{% url 'delete-room' room.id %}">Deletar</a>
-                {% endif %}
-                <span>@{{room.host.username}}</span>
-                <h5>{{room.id}} -- <a href="{% url 'room' room.id %}">{{room.name}}</a></h5>
-                <small>@{{room.topic.name}}</small>
-                <hr>
-            </div>
-            {% endfor %}
-        </div>
+        {% include 'base/feed_component.html' %}
+        
     </div>
     
     <div>
-        <h3>Últimas mensagens</h3>
-        <hr>
-        {% for message in room_messages %}
-            <div>
-                <small>@{{message.user}} {{message.created|timesince}} atrás</small>
-            </div>
-        {% endfor %}
+        {% include 'base/activity_component.html' %}
     </div>
 
 </div>
 
 
-{% endblock content%}
+{% endblock content %}
