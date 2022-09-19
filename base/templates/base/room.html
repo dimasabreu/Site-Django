@@ -1,30 +1,54 @@
 {% extends 'main.html' %}
 {% block content%}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <title>Document</title>
-</head>
-<body>
-    <h1>{{room.name}}</h1>
-    <p>{{room.description}}</p>
 
-    <div class="comment-wrapper">
-        <h3>Conversas</h3>
-        <hr>
 
-        {% for message in room_messages %}
-        <div>
-            <small>@{{message.user}} {{message.created|timesince}} atrás</small>
-            <p>{{message.body}}</p>
+<style>
+    .room-container{
+        display: grid;
+        grid-template-columns: 3fr 1fr;
+    }
+</style>
+
+<div class="room-container">
+
+    <div>
+        <h1>{{room.name}}</h1>
+        <p>{{room.description}}</p>
+
+        <div class="comment-wrapper">
+            <h3>Conversas</h3>
             <hr>
+
+            {% for message in room_messages %}
+            <div>
+                <small>@{{message.user}} {{message.created|timesince}} atrás</small>
+                <p>{{message.body}}</p>
+                <hr>
+            </div>
+            {% endfor %}
+        </div>
+
+
+        {% if request.user.is_authenticated %}
+        <div class="comment-form">
+            <form method="POST" action="">
+                {% csrf_token %}
+                <input type="text" name="body" placeholder="Digite sua mensagem..."/>
+            </form>
+        </div>
+        {% endif %}
+    </div>
+
+    <div>
+        <h3>Participantes</h3>
+        <hr>
+        {% for participant in participants %}
+        <div>
+            <p>@{{participant.username}}</p>
         </div>
         {% endfor %}
     </div>
-</body>
-</html>
+
+</div>
+
 {% endblock content%}
