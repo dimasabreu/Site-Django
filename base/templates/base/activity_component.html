@@ -2,8 +2,8 @@
 <hr>
 {% for message in room_messages %}
     <div>
-        <small>@{{message.user}} {{message.created|timesince}} atrás</small>
-        <small>comentou na sala "{{message.room}}"</small>
+        <small><a href="{% url 'user-profile' message.user.id %}">@{{message.user}}</a> {{message.created|timesince}} atrás</small>
+        <small>comentou na sala <a href="{% url 'room' message.room.id %}">{{message.room}}</a></small>
 
         <p>{{message.body}}</p>
         {% if request.user == message.user %}
