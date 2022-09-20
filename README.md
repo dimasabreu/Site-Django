@@ -1,10 +1,12 @@
-# Site para comunidade
+# Site em django estilo discord
 
 # Sobre
 Site desenvolvido em python com o framework django, mas não estou conseguindo fazer o deploy dele.<br>
 Postei mesmo assim pois foi uma grande experiencia.<br>
-O projeto é uma "copia" pois foi feito acompanhando um tutorial. 
+O projeto é uma "copia" pois foi feito acompanhando um tutorial. <br>
 
+Link para ver o projeto completo:
+https://youtu.be/_eh15Uq3zPw
 
 https://user-images.githubusercontent.com/95443404/191163094-5befb747-1711-4e0c-be50-43b984bd4ca6.mp4
 
