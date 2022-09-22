@@ -3,7 +3,7 @@
 # Sobre
 Site desenvolvido em python com o framework django, mas não estou conseguindo fazer o deploy dele.<br>
 Postei mesmo assim pois foi uma grande experiencia.<br>
-O projeto é uma "copia" pois foi feito acompanhando um tutorial. <br>
+O projeto é uma "copia" deste https://studybuddev.herokuapp.com. <br>
 
 Link para ver o projeto completo:
 https://youtu.be/_eh15Uq3zPw
