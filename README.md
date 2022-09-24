@@ -6,7 +6,7 @@ Postei mesmo assim pois foi uma grande experiencia.<br>
 O projeto é uma "copia" deste https://studybuddev.herokuapp.com. <br>
 
 Link para ver o projeto completo:
-https://youtu.be/_eh15Uq3zPw
+<a href="https://youtu.be/_eh15Uq3zPw"> Video </a>
 
 https://user-images.githubusercontent.com/95443404/191163094-5befb747-1711-4e0c-be50-43b984bd4ca6.mp4
 
